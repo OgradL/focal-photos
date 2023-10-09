@@ -1,0 +1,53 @@
+#:kivy 1.0
+#:import utils kivy.utils
+<home>:
+	GridLayout:
+		cols: 1
+		rows: 3
+		canvas.before:
+			Color:
+				rgb: root.color_palette["back1"]
+			Rectangle:
+				size: self.size
+				pos: self.pos
+		
+		Label:
+			text: "Calcola distanza iperfocale"
+			font_size: 50
+		
+		GridLayout:
+			cols: 3
+			
+			GridLayout:
+				cols: 1
+				rows: 2
+				Label:
+					text: "pvc"
+					font_size: 28
+				CheckBox:
+					id: pvc_in
+					on_active: root.calculate_hyper_distance()
+			GridLayout:
+				cols: 1
+				rows: 2
+				Label:
+					text: "f"
+					font_size: 28
+				TextInput:
+					id: f_in
+					text: "25"
+					on_text: root.calculate_hyper_distance()
+			GridLayout:
+				cols: 1
+				rows: 2
+				Label:
+					text: "F"
+					font_size: 28
+				TextInput:
+					id: F_in
+					text: "8"
+					on_text: root.calculate_hyper_distance()
+
+		Label:
+			id: iperfocal_distance_label
+			text: "0"
