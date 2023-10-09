@@ -24,9 +24,6 @@ from random import *
 import math
 from math import cos, sin, tan, pi as PI, sqrt, pow, ceil, floor
 import time
-import tkinter
-import tkinter.filedialog
-import copy
 
 Builder.load_file("focal.kv")
 
